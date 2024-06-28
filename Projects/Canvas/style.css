@@ -1,0 +1,77 @@
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#title {
+    height: 150px;
+    background-color: #2196F3;
+    border-radius: 25px;
+
+    /* Text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+
+#title_text {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+canvas {
+    background-color: #7bb6e7;
+}
+
+#button_container {
+    width: 800px;
+    display: flex; /* Arrange buttons horizontally */
+
+}
+
+#range_container {
+    width: 300px;
+    height: 41px;
+    align-self: flex-end;
+    display: flex;
+}
+
+#range_text {
+    display: flex;
+    align-self: center;
+    margin-right: 10px;
+}
+
+#range_slider {
+    display: flex;
+    top: 5px;
+}
+
+button {
+    display: flex; /* puts button below canvas */
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    user-select: none;
+}
+
+#triangle_data_container {
+    width: 800px;
+    display: flex;
+}
+
+.triangle_data {
+    margin-right: 20px;
+}
+
+#triangle_explaination {
+    margin-top: 0px;
+}

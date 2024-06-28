@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Canvas</title>
+        <link rel="stylesheet" href="./style.css">
+        <script defer src="./main.js" type="module"></script>
+    </head>
+    <body>
+        <div id="title">
+            <h1><a href="../../index.html" id="title_text">Canvas</a></h1>
+        </div>
+        <p>This page is about the <b>&lt;canvas&gt;</b> html element</p>
+        <p>Example paint app:</p>
+
+        <canvas id="Canvas1" width="800" height="400"></canvas>
+        
+        <div id="button_container">
+            <button id="reset_button">Clear</button>
+            <button id="save">Save</button>
+            <button id="load">Load</button>
+            <button id="delete_data">Delete data</button>
+            <div id="range_container">
+                <p id="range_text">Brush size:</p>
+                <input id="range_slider" type="range" min="2" max="20" step="1" value="10">
+            </div>
+        </div>
+
+        <p>Uses local storage to store data of all points in the canvas which enables saving and loading.</p>
+
+        <p>Pythagorean theorem:</p>
+        <canvas id="Canvas2" width="800" height="400"></canvas>
+        <div id="triangle_data_container">
+            <p class="triangle_data" id="triangle_x">X: 0px</p>
+            <p class="triangle_data" id="triangle_y">Y: 0px</p>
+            <p class="triangle_data" id="triangle_h">H: 0px</p>
+        </div>
+        <p id="triangle_explaination">Using ctx we can draw lines from one point to another on the canvas.</p>
+    </body>
+</html>

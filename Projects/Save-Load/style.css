@@ -1,0 +1,37 @@
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#title {
+    height: 150px;
+    background-color: #2196F3;
+    border-radius: 25px;
+
+    /* Text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+
+#title_text {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#input {
+    width: 350px;
+    font-size: 20px;
+}
+
+button {
+    margin-left: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+}

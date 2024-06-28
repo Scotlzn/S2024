@@ -1,0 +1,31 @@
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#title {
+    height: 150px;
+    background-color: #2196F3;
+    border-radius: 25px;
+
+    /* Text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+
+    position: relative;
+    animation-name: scaleUpAnimation;
+    animation-duration: 4s;
+    animation-timing-function: ease;
+    /* transform-origin: center bottom; */
+}
+
+@keyframes scaleUpAnimation {
+    0% {
+        transform: scale(0.0);
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}

@@ -1,0 +1,60 @@
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#title {
+    height: 150px;
+    background-color: #2196F3;
+    border-radius: 25px;
+
+    /* Text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+
+#title_text {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+canvas {
+    background-color: #7bb6e7;
+}
+
+#c3D_plane {
+    position: fixed;
+    margin-top: 0px;
+    background-color: black;
+}
+
+#c2D_plane {
+    position: fixed;
+    left: 980px;
+    top: 385px;
+}
+
+#game_container {
+    width: 50%;
+    height: 100%;
+}
+
+#minimap_container {
+    margin-left: 972px;
+    height: 720px;
+}
+
+body {
+    overflow: hidden; /* Hide scrollbars */
+}
+
+h3 {
+    position: relative;
+    top: 188px;
+}

@@ -1,0 +1,85 @@
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#title {
+    height: 150px;
+    background-color: #2196F3;
+    border-radius: 25px;
+
+    /* Text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+
+p {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#pre_game_container {
+    display: flex;
+}
+
+#range_input {
+    height: 25%;
+    display: flex;
+    align-self: center;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    display: flex; /* puts button below canvas */
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    user-select: none;
+}
+
+#start_button {
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 42px;
+}
+
+#game_container {
+    width: 800px;
+    height: 200px;
+    display: flex;
+    display: none;
+}
+
+#output_container {
+    position: relative;
+    height: 200px;
+    width: 400px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#output_text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+#button_container {
+    display: flex;
+    width: 400px;
+    height: 200px;
+    flex-direction: column; /* Stack buttons vertically */
+}
+
+.game_buttons {
+    display: flex;
+    width: 95px;
+    justify-content: center;
+}

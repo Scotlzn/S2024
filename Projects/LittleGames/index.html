@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Animations</title>
+        <link rel="stylesheet" href="./style.css">
+        <script defer src="./guess.js"></script>
+    </head>
+    <body>
+        <div id="title">
+            <h1><a href="../../index.html" id="title_text">Little Games</a></h1>
+        </div>
+        <hr>
+        <div id="pre_game_container">
+            <p>Think of a number between 0 and</p>
+            <input id="range_input" type="number" value="100" max="999999999999">
+            <button id="start_button">Start Game</button>
+        </div>
+        <hr>
+        <div id="game_container">
+            <div id="output_container">
+                <p id="output_text">50?</p>
+            </div>
+            <div id="button_container">
+                <button class="game_buttons" id="higher">Higher</button>
+                <button class="game_buttons" id="lower">Lower</button>
+                <button class="game_buttons" id="correct">Correct</button>
+            </div>
+        </div>
+        <hr id="guess_horizontal-line" style="display: none;">
+    </body>
+</html>

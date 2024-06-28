@@ -1,0 +1,44 @@
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#display {
+    width: 425px;
+    border: 1px solid black;
+}
+
+.grid-container {
+    width: 425px;
+    height: 425px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    position: relative;
+    background-color: #2196F3;
+    padding: 0;
+  }
+
+.grid-item {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    user-select: none; /* Make the text unselectable */
+
+    /* Text alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#reset_button {
+    /* Add margin at the top to separate from the grid  */
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+}

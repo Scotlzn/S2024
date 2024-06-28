@@ -1,0 +1,51 @@
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#title {
+    height: 150px;
+    background-color: #2196F3;
+    border-radius: 25px;
+
+    /* Text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+
+p {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+canvas {
+    background-color: #7bb6e7;
+    margin-top: 10px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    margin-right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    user-select: none;
+}
+
+#maze_project_container {
+    margin-top: -10px;
+    display: flex;
+}
+
+#button_container {
+    margin-left: 25px;
+    width: 200px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
