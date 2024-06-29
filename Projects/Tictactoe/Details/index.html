@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TicTacToe Details</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="../index.html">TicTacToe</a>
+        </div>
+        <main>
+            <section id="introduction">
+                <h2>Introduction</h2>
+                <p>TicTacToe project 29/06/24 uses a navbar with all the functionality for the game. The main algorithm is the Minimax algorithm although i did write my own very slow version. The third AI just plays completely randomly yet it can actually beat the proper algorithms.</p>
+            </section>
+            <section id="html-example">
+                <h2>Algorithms</h2>
+                <p>The minimax algorithm looks at the game possiblities as a tree and finds the best choice based on a perfect played game. It does this by maximizing its score (more score = better choice) while the other player is minimizing the score. In the tree both players are trying to get there most favourable outcome, but it obviously picks the best choice of the X or O its checking. My algorithm, while being slow checks every single possiblity and keeps this in mind for the decision. So it might be worse/slower in and optimal game. Its more versitile being able to beat the random player. The random player can beat the minimax algorithm because the algorithm thinks that the opposite player will always pick their best outcome. But no, the random player picks whatever he feels like. This confuses the minimax tree and causes it to lose sometimes.</p>
+            </section>
+            <section id="css-example">
+                <h2>Final Thoughts</h2>
+                <p>Overall, I think that the UI was the hardest part. The code was pretty messy at the end because I was a bit fed up with it. That usually happens so I need to get better. I also think i should really start using classes more to organize the code.</p>
+            </section>
+        </main>
+    </body>
+</html>

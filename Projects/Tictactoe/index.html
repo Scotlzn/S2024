@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TicTacToe</title>
+        <link rel="stylesheet" href="./style.css">
+        <script type="module" defer src="./script.js"></script>
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="../../index.html">S2024</a>
+            <a href="./Details/index.html">Details</a>
+            <div class="dropdown" id="dropdown1">
+                <button class="dropbtn" id="dropbtn1">
+                    <span class="droptxt">
+                        Human
+                        <i class="fa fa-caret-down"></i>
+                    </span>
+                </button>
+                <div class="dropdown-content" id="dropdown-content1">
+                    <button>Human</button>
+                    <button>Random AI</button>
+                    <button>Ali's AI (slow)</button>
+                    <button>Minimax Algorithm</button>
+                </div>
+            </div>
+            <div class="dropdown" id="dropdown2">
+                <button class="dropbtn" id="dropbtn2">
+                    <span class="droptxt">
+                        Human
+                        <i class="fa fa-caret-down"></i>
+                    </span>
+                </button>
+                <div class="dropdown-content" id="dropdown-content2">
+                    <button>Human</button>
+                    <button>Random AI</button>
+                    <button>Ali's AI (slow)</button>
+                    <button>Minimax Algorithm</button>
+                </div>
+            </div>
+            <button id="ui_step_button">Step</button>
+            <button id="ui_reset_button">Reset</button>
+            <p id="ui_turn_display">Turn: X</p>
+        </div>
+        <div id="canvas-container">
+            <canvas id="canvas1" width="600" height="600"></canvas>
+        </div>
+
+    </body>
+</html>
