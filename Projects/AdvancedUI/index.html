@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Navbar with Scrollable Dropdown</title>
         <link rel="stylesheet" href="./style.css">
-        <script defer src="./script.js"></script>
+        <script defer src="./ui.js"></script>
     </head>
     <body>
         <div class="navbar">
@@ -13,7 +13,7 @@
             <a href="#services">Services</a>
             <div class="dropdown">
                 <button class="dropbtn">
-                    <span class="droptxt">
+                    <span>
                         Dropdown
                         <i class="fa fa-caret-down"></i>
                     </span>
@@ -32,7 +32,22 @@
                     <a href="#link10">Link 10</a>
                 </div>
             </div> 
-            <a href="#contact">Contact</a>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <span>
+                        Toggles
+                        <i class="fa fa-caret-down"></i>
+                    </span>
+                </button>
+                <div class="dropdown-content">
+                    <p>Link 1<input type="checkbox"></p>
+                    <p>Link 2<input type="checkbox"></p>
+                    <p>Link 3<input type="checkbox"></p>
+                    <p>Link 4<input type="checkbox"></p>
+                    <p>Link 5<input type="checkbox"></p>
+                </div>
+            </div> 
+            <button>Contact</button>
         </div>
     </body>
 </html>
