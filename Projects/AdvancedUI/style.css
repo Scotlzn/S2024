@@ -76,6 +76,10 @@ body {
     overflow-y: auto;
 }
 
+#nested {
+    overflow-y: visible;
+}
+
 .dropdown-content a, .dropdown-content button, .dropdown-content p {
     float: none;
     color: black;
@@ -102,9 +106,32 @@ body {
     display: block;
 }
 
-.dropdown-content input {
+.dropdown-content input, .arrow {
     position: absolute;
     display: inline-block;
     right: 5%;
 }
 
+.submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #f9f9f9;
+    width: 200px;
+    z-index: 2;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+.submenu button {
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px;
+    border: none;
+    background: none;
+}
+
+.submenu-parent:hover .submenu {
+    display: block;
+}
