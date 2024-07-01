@@ -9,8 +9,8 @@ const bounding_box = canvas.getBoundingClientRect();
 const ctx = canvas.getContext('2d');
 
 const ui_entropy_button = document.getElementById("ui_entropy_button");
-const save_button = document.getElementById("save_button");
-const load_button = document.getElementById("load_button");
+const save_buttons = document.querySelectorAll('.save_btn')
+const load_buttons = document.querySelectorAll('.load_btn')
 const clear_button = document.getElementById("clear_button");
 
 const width = canvas.width;
@@ -184,14 +184,18 @@ ui_entropy_button.onclick = function() {
     render();
 }
 
-save_button.onclick = function() {
-    save_game(grid);
-}
+save_buttons.forEach((btn, idx) => {
+    btn.onclick = function() {
+        save_game(grid, idx + 1);
+    }
+});
 
-load_button.onclick = function() {
-    grid = load_game();
-    calculate_entropy();
-}
+load_buttons.forEach((btn, idx) => {
+    btn.onclick = function() {
+        grid = load_game(false, idx + 1);
+        calculate_entropy();
+    }
+});
 
 clear_button.onclick = function() {
     grid = load_game(true);

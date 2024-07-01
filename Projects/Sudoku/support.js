@@ -25,8 +25,9 @@ export function make_filled_grid() {
     return matrix;
 }
 
-function save_data(data_input) {
-    let data = data_input;
+function save_data(data_input, index) {
+    let data = load_data();
+    data[index] = data_input;
     let jsonString = JSON.stringify(data);
     localStorage.setItem('sudoku', jsonString);
 }
@@ -37,7 +38,7 @@ function load_data() {
     return storedData;
 }
 
-export function save_game(grid) {
+export function save_game(grid, index) {
     let out = [];
     for (let y = 0; y < 9; y++) {
         let nl = [];
@@ -51,12 +52,12 @@ export function save_game(grid) {
         }
         out[y] = nl;
     }
-    save_data(out);
+    save_data(out, index);
 }
 
-export function load_game(clear = false) {
+export function load_game(clear = false, index = 0) {
     let out = [];
-    let data = (!clear) ? load_data() : make_filled_grid();
+    let data = (!clear) ? load_data()[index] : make_filled_grid();
     for (let y = 0; y < 9; y++) {
         let nl = [];
         for (let x = 0; x < 9; x++) {

@@ -16,9 +16,23 @@
                         <i class="fa fa-caret-down"></i>
                     </span>
                 </button>
-                <div class="dropdown-content">
-                    <button id="save_button">Save</button>
-                    <button id="load_button">Load</button>
+                <div class="dropdown-content" id="nested">
+                    <div class="submenu-parent">
+                        <button class="submenu-btn">Save<span class="arrow">></span></button>
+                        <div class="submenu">
+                            <div><button class="save_btn">Save slot 1</button></div>
+                            <div><button class="save_btn">Save slot 2</button></div>
+                            <div><button class="save_btn">Save slot 3</button></div>
+                        </div>
+                    </div>
+                    <div class="submenu-parent">
+                        <button class="submenu-btn">Load<span class="arrow">></span></button>
+                        <div class="submenu">
+                            <div><button class="load_btn">Load slot 1</button></div>
+                            <div><button class="load_btn">Load slot 2</button></div>
+                            <div><button class="load_btn">Load slot 3</button></div>
+                        </div>
+                    </div>
                     <button id="clear_button">Clear</button>
                 </div>
             </div> 
