@@ -17,9 +17,3 @@ window.addEventListener('click', function(event) {
         }
     });
 });
-
-// Checkbox functionality
-function toggle_checkbox(button) {
-    // button.firstElementChild.classList.toggle('active');
-    button.classList.toggle('active');
-}
