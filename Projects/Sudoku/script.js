@@ -1,4 +1,4 @@
-import { generate_grid, save_game } from "./support.js";
+import { generate_grid, save_game, load_game } from "./support.js";
 
 // UI
 const dropdown = document.querySelector('.dropdown');
@@ -11,14 +11,14 @@ const ctx = canvas.getContext('2d');
 const ui_entropy_button = document.getElementById("ui_entropy_button");
 const save_button = document.getElementById("save_button");
 const load_button = document.getElementById("load_button");
+const clear_button = document.getElementById("clear_button");
 
 const width = canvas.width;
 const height = canvas.height;
 const tile_size = width / 9;
 const entropy_distance = 20;
 
-const grid = generate_grid(9);
-
+var grid = generate_grid(9);
 var display_entropy = true;
 var selected_tile = [];
 
@@ -50,6 +50,8 @@ function render() {
     }
 
     // Numbers and entropy
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 3;
     for (let y = 0; y < 9; y++) {
         for (let x = 0; x < 9; x++) {
             let cell = grid[y][x];
@@ -57,18 +59,26 @@ function render() {
             if (cell.collapsed) {
                 ctx.font = '40px "Press Start 2P"';
                 render_number(cell.options[0], midpoints[0], midpoints[1]);
-            } else {
-                ctx.font = '20px "Press Start 2P"';
+            } else if(display_entropy) {
                 let entropy = cell.options;
-                entropy.forEach((number) => {
-                    let c = (entropy.length == 1) ? 'red' : 'black';
-                    ctx.fillStyle = c;
-                    let internalY = Math.floor((number - 1) / 3)
-                    let entropyY = ((internalY - 1) * entropy_distance) + midpoints[1];
-                    let entropyX = ((((number - 1) - (internalY * 3)) - 1) * entropy_distance) + midpoints[0];
-                    render_number(number, entropyX, entropyY);
+                if (entropy.length > 0) {
+                    ctx.font = '20px "Press Start 2P"';
+                    entropy.forEach((number) => {
+                        let c = (entropy.length == 1) ? 'red' : 'black';
+                        ctx.fillStyle = c;
+                        let internalY = Math.floor((number - 1) / 3)
+                        let entropyY = ((internalY - 1) * entropy_distance) + midpoints[1];
+                        let entropyX = ((((number - 1) - (internalY * 3)) - 1) * entropy_distance) + midpoints[0];
+                        render_number(number, entropyX, entropyY);
+                    });
                     ctx.fillStyle = 'black';
-                });
+                } else {
+                    ctx.beginPath();
+                    let xr = (tile_size * 0.25);
+                    line((x * tile_size) + (tile_size * 0.5) - xr, (y * tile_size) + (tile_size * 0.5) - xr, (x * tile_size) + (tile_size * 0.5) + xr, (y * tile_size) + (tile_size * 0.5) + xr);
+                    line((x * tile_size) + (tile_size * 0.5) + xr, (y * tile_size) + (tile_size * 0.5) - xr, (x * tile_size) + (tile_size * 0.5) - xr, (y * tile_size) + (tile_size * 0.5) + xr);
+                    ctx.stroke();
+                }
             }
             
         }
@@ -76,6 +86,7 @@ function render() {
 
     // Selected tile
     ctx.lineWidth = 5;
+    ctx.strokeStyle = 'black';
     if (selected_tile != []) ctx.strokeRect(selected_tile[0] * tile_size, selected_tile[1] * tile_size, tile_size, tile_size);
 }
 
@@ -128,7 +139,7 @@ function calculate_entropy() {
 }
 
 canvas.addEventListener('click', function(event) {
-    event.stopPropagation();
+    event.stopPropagation();  // Stops the event telling the document that it has been clicked
     const mouseX = event.clientX - bounding_box.left;
     const mouseY = event.clientY - bounding_box.top;
     const tileX = Math.floor(mouseX / tile_size);
@@ -166,16 +177,24 @@ window.addEventListener('keydown', function(event) {
     }
 });
 
+// --------------------- UI -----------------------------
+
 ui_entropy_button.onclick = function() {
     display_entropy = !display_entropy;
+    render();
 }
 
 save_button.onclick = function() {
-    save_game();
+    save_game(grid);
 }
 
 load_button.onclick = function() {
-    load_button();
+    grid = load_game();
+    calculate_entropy();
+}
+
+clear_button.onclick = function() {
+    grid = load_game(true);
     calculate_entropy();
 }
 

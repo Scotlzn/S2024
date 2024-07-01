@@ -13,6 +13,18 @@ export function generate_grid(size) {
     return out;
 }
 
+export function make_filled_grid() {
+    let matrix = [];
+    for (let i = 0; i < 9; i++) {
+        let row = [];
+        for (let j = 0; j < 9; j++) {
+            row.push(0);
+        }
+        matrix.push(row);
+    }
+    return matrix;
+}
+
 function save_data(data_input) {
     let data = data_input;
     let jsonString = JSON.stringify(data);
@@ -26,11 +38,10 @@ function load_data() {
 }
 
 export function save_game(grid) {
-    // Translate to only numbers
     let out = [];
     for (let y = 0; y < 9; y++) {
         let nl = [];
-        for (let x = 0; x < 0; x++) {
+        for (let x = 0; x < 9; x++) {
             let cell = grid[y][x];
             if (cell.collapsed) {
                 nl[x] = cell.options[0];
@@ -43,12 +54,12 @@ export function save_game(grid) {
     save_data(out);
 }
 
-export function load_game() {
+export function load_game(clear = false) {
     let out = [];
-    let data = load_data();
-    for (let y = 0; y < size; y++) {
+    let data = (!clear) ? load_data() : make_filled_grid();
+    for (let y = 0; y < 9; y++) {
         let nl = [];
-        for (let x = 0; x < size; x++) {
+        for (let x = 0; x < 9; x++) {
             let cell = data[y][x];
             let c = (cell == 0) ? false : true;
             let o = (cell == 0) ? [1, 2, 3, 4, 5, 6, 7, 8, 9] : [cell];
